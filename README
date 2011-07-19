@@ -1,0 +1,25 @@
+README - Version 1.0
+
+*Requirements:
+1. Ruby 1.9.2
+
+*Commands:
+
+1. smn = Summon a monster
+2. spl = Activate spell card
+3. trp = Set a trap 		*Not implemented yet
+4. lp = Show lifepoints
+5. hc = Show hand count
+6. mf = Show monster field
+7. gv = Show graveyard
+8. exit = Exit's the game
+
+*Notes:
+
+1. To see a text replay of the previous game, open 'log.txt' in a text editor.
+
+*Known Bugs:
+
+Not far enough in development for bugs to be found.
+
+
