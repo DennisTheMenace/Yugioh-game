@@ -3,6 +3,12 @@ README - Version 1.0
 *Requirements:
 1. Ruby 1.9.2
 
+*How to run
+
+1. Extract the downloaded archive.
+2. Open up terminal and navigate to the extracted folder.
+3. run "ruby Game.rb"
+
 *Commands:
 
 1. smn = Summon a monster
