@@ -12,4 +12,5 @@ require_relative 'Phases.rb'
 require_relative 'Update.rb'
 require_relative 'Colourtest.rb'
 require_relative 'Commands.rb'
+require_relative 'Help.rb'
 
