@@ -23,25 +23,11 @@ def discard(type) # Provide a string input of spell, monster or trap to determin
   
   discards.each { |x| puts x[:name] }
   
-  response = gets.chomp
-  case response
-  when /[1]/
-    discardnum = 0
-  when /[2]/
-    discardnum = 1
-  when /[3]/
-    discardnum = 2
-  when /[4]/
-    discardnum = 3
-  when /[5]/
-    discardnum = 4
-  when /[6]/
-    discardnum = 5
-  when /[7]/
-    discardnum = 6
-  end
+  discardnum = gets.to_i
+  discardnum -= 1
+  
   puts "You have discarded #{discards[discardnum][:name]}"
-  $file.puts("#{$usr} discarded #{$hand[discardnum][:name]}")
+  $file.puts("#{$activeplayer} discarded #{$hand[discardnum][:name]}")
   $graveyard.push($hand[discardnum]) # Add the card being discarded to the graveyard.
   update
   $hand.delete($hand[discardnum]) # Deletes the card from the hand.

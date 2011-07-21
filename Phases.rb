@@ -55,7 +55,10 @@ if $activephase == 2
     $file.close
   end
   $activephase += 1
-  if $activephase > 5 # After "End phase" returns the active phase back to draw phase.
+  if $activephase >= 5 # After "End phase" returns the active phase back to draw phase.
+    $activeplayer += 1 unless $activeplayer == 1
+    $activeplayer -= 1 unless $activeplayer == 0
     $activephase = 1
   end
+  
 end

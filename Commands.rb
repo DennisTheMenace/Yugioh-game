@@ -24,6 +24,8 @@ def command
       $file.close
       puts "Files flushed properly"
       abort("Exiting")
+    elsif response == "turn"
+      puts $activeplayer
     elsif response == "help"
       help
     else
