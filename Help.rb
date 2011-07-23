@@ -12,5 +12,22 @@ def help
   7. gv = Show graveyard
 
 "
-puts helpcmd
+  options = ["Getting started", "Commands"]
+  options.each {|x| puts x}
+  response = gets.chomp
+  case response
+  when /[1]/
+      mystring = ''
+      File.open("Gettingstarted", "r") { |f|
+      mystring = f.read}
+      puts mystring
+  when /[2]/
+      mystring = ''
+      File.open("Commands", "r") { |f|
+      mystring = f.read}
+      puts mystring
+      #puts helpcmd
+  end
+  
+
 end
