@@ -19,6 +19,10 @@ README - Version 1.0
 6. mf = Show monster field
 7. gv = Show graveyard
 8. exit = Exit's the game
+9. help = Lists commands and can also give you a tutorial*
+10. btl = Battle an enemy monster with on of your own
+
+* Tutorial coming soon...
 
 *Notes:
 
