@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+
+# Help command
+
 def help
   helpcmd = "
 *Commands:
@@ -21,7 +24,7 @@ def help
       File.open("Gettingstarted", "r") { |f|
       mystring = f.read}
       puts mystring
-  when /[2]/
+  when /[2]/		# Shows the commands list
       mystring = ''
       File.open("Commands", "r") { |f|
       mystring = f.read}

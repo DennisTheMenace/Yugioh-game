@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# Method used for drawing a card.
+
 # Creates a random number and uses that to add a random card to the hand and then deletes it from the deck.
 
 $hand1 = [] # Sets hand to empty before game.

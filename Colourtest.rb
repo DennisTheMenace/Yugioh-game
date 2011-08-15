@@ -1,4 +1,5 @@
-#require 'win32console'
+# Allows colouring of words.
+
 require 'term/ansicolor'
 
 class String

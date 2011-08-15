@@ -1,5 +1,11 @@
+#!/usr/bin/env ruby
+
+def start
+  activephase($activeplayer)
+end
+
 def activephase(currentplayer)
-  if $activephase == 0
+  if $activephase == 0		# Pre-game set up
     5.times do draw(0,"yes") end
     5.times do draw(1,"yes") end
     puts "Your hand consists of #{$hand1[0][:name]},#{$hand1[1][:name]},#{$hand1[2][:name]},#{$hand1[3][:name]},#{$hand1[4][:name]}"
@@ -83,8 +89,9 @@ if $activephase == 2
   end
   $activephase += 1
   if $activephase > 5 # After "End phase" returns the active phase back to draw phase.
-    #$activeplayer += 1 unless $activeplayer == 1
-    #$activeplayer -= 1 unless $activeplayer == 0
+    $activeplayer -= 1 unless $activeplayer == 0
+    $activeplayer += 1 unless $activeplayer == 1
+    
     $activephase = 1
   end
   puts $activeplayer

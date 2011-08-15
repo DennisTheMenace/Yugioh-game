@@ -21,13 +21,14 @@ require_relative 'Return.rb'
 require_relative 'Playerset.rb' # Not being used yet.
 require_relative 'Trap.rb' # Totally useless
 require_relative 'List.rb'
+require_relative 'Battle.rb' # Totally useless
 
 $file = File.new("log.txt", "w+") # Opens the log.
 #puts "Enter your name:"
 $usr1 = 'Joshua'
-$usr2 = 'Bob'
-$player1area = [$hand1,$deck1,$graveyard1,$usr1]
-$player2area = [$hand2,$deck2,$graveyard2,$usr2]
+$usr2 = 'Max'
+$player1area = [$hand1,$deck1,$graveyard1,$usr1,$monsterfield1]
+$player2area = [$hand2,$deck2,$graveyard2,$usr2,$monsterfield2]
 $activeplayer = 0
 $lp = 8000 # Sets Life points
 $turncount = 0

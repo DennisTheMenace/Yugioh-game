@@ -2,7 +2,7 @@
 
 # Discard a card from your hand.
 
-def discard(type,player) # Provide a string input of spell, monster or trap to determine the type of the card being discarded.
+def discard(type) # Provide a string input of spell, monster or trap to determine the type of the card being discarded.
   puts "Discard initiated"
   sleep 1
   discards = []
@@ -20,19 +20,17 @@ def discard(type,player) # Provide a string input of spell, monster or trap to d
   #end
   puts "Player 1"
   sleep 1
-  hand = $player1area[0]
-  deck = $player1area[1]
-  graveyard = $player1area[2]
+  playerset
   puts "Player variables set"
   sleep 1
   types = ["spell", "monster", "trap"]
   if type == "all"
     puts "Discard parameter = 'all'"
-    hand.each { |x| discards.push(x) }
+    @@hand.each { |x| discards.push(x) }
   else types.each {|x|
   
     if x == type
-      hand.each { |i| if i[:type] == x
+      @@hand.each { |i| if i[:type] == x
       discards.push(i)
     end
     }
@@ -53,11 +51,11 @@ def discard(type,player) # Provide a string input of spell, monster or trap to d
   sleep 1
   puts discardnum
   
-  $file.puts("#{$activeplayer} discarded #{hand[discardnum][:name]}")
-  graveyard.push(hand[discardnum]) # Add the card being discarded to the graveyard.
+  $file.puts("#{$activeplayer} discarded #{@@hand[discardnum][:name]}")
+  @@graveyard.push(@@hand[discardnum]) # Add the card being discarded to the graveyard.
   puts "Pushed to graveyard"
   update
-  hand.delete(hand[discardnum]) # Deletes the card from the hand.
+  @@hand.delete(@@hand[discardnum]) # Deletes the card from the hand.
   puts "Deleted from hand"
   puts "You have discarded #{discards[discardnum][:name]}"
   
