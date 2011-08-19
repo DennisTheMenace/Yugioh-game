@@ -11,8 +11,8 @@ $file = File.new("log.txt", "w+") # Opens the log.
 $usr1 = 'Joshua' # Sets player 1
 $usr2 = 'Bob'    # Sets player 2
 
-$player1area = [$hand1,$deck1,$graveyard1,$usr1,$monsterfield1]
-$player2area = [$hand2,$deck2,$graveyard2,$usr2,$monsterfield2]
+$player1area = [$hand1,$deck1,$graveyard1,$usr1,$monsterfield1]			# Sets the area's for player 1
+$player2area = [$hand2,$deck2,$graveyard2,$usr2,$monsterfield2]			# Sets the area's for player 2
 $activeplayer = 0 # Sets starting player
 $lp = 8000 # Sets Life points
 $turncount = 0

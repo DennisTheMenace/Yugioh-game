@@ -18,4 +18,5 @@ require_relative 'Playerset.rb'
 require_relative 'Trap.rb' # Totally useless
 require_relative 'List.rb'
 require_relative 'Battle.rb' # Totally useless
+require_relative 'Test Environment.rb'
 

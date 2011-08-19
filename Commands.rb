@@ -8,7 +8,7 @@ def command(player)
     if response == "smn"	# Summon a monster
       summon
     elsif response == "spl"
-      spell		# Remind me to update spell to allow for inputting $activeplayer
+      spell(true)		# Remind me to update spell so it moves the card before activating the effect
     elsif response == "mf"
       puts 'Monster field:'
       @@monsterfield.each {|x| puts x[:name]}
@@ -18,7 +18,7 @@ def command(player)
       list(@@graveyard)
       #$graveyard.each { |b| puts $graveyard[b][:name]}
     elsif response == "lp"
-      puts "You have #{$lp}"
+      puts "You have #{$lp1}"
     elsif response == "hc"
       puts "You have #{@@hand.size} cards in your hand"
     

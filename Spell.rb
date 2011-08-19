@@ -2,7 +2,7 @@
 
 # Activate a spell.
 
-def spell
+def spell(mode)
       playerset
       handspells = []
       @@hand.each {|x| 
@@ -39,17 +39,20 @@ def spell
       puts "#{handspells[spell][:name]} "
       $file.puts("#{@@name} activated #{handspells[spell][:name]}")   # 
       #eval(handspells[spell][:effect])
-      puts handspells[spell][:effect]
+      if mode == 1
+        puts handspells[spell][:effect]
+      end      
+
       eval(handspells[spell][:effect])
       puts "Evaluated"
-      $spelltrapfield1.push(handspells[spell])			# Adds the spell to the spell field.
+      @@spelltrapfield.push(handspells[spell])			# Adds the spell to the spell field.
       update						 	# Updates the log.
-      puts "Spell and Trap Field:"
-      $spelltrapfield1.each {|x| puts x[:name]}
-      puts "Graveyard:"
-      @@graveyard.each {|x| puts x[:name]}
-      a = $spelltrapfield1.size
+      #puts "Spell and Trap Field:"
+      #@@spelltrapfield.each {|x| puts x[:name]}
+      #puts "Graveyard:"
+      #@@graveyard.each {|x| puts x[:name]}
+      a = @@spelltrapfield.size
       a -= 1
-      $spelltrapfield1.delete($spelltrapfield1[a])		# Deletes the spell from the spell field.
+      @@spelltrapfield.delete(@@spelltrapfield[a])		# Deletes the spell from the spell field.
       update 							# Updates the log.
 end
