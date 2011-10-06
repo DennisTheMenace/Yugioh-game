@@ -1,7 +1,9 @@
-README - Version 1.0
+README - Version 1.1
 
 *Requirements:
 1. Ruby 1.9.2
+2. Rubygame
+3. RMagik (I think)
 
 *How to run
 
@@ -20,9 +22,28 @@ README - Version 1.0
 7. gv = Show graveyard
 8. exit = Exit's the game
 9. help = Lists commands and can also give you a tutorial*
-10. btl = Battle an enemy monster with on of your own
+10. btl = Battle an enemy monster with on of your own		* Still in development
+11. turn = Output the current players turn
 
 * Tutorial coming soon...
+
+*Current Cards:
+
+Celtic guardian
+Pot of Greed
+Trap Hole
+Spike Seadra
+Lightning Vortex *
+Giant Soldier of Stone
+Monster Reborn **
+Obnoxious Celtic Guard
+Summoned Skull
+Dark Magician
+Hand Destruction
+Compulsory Evacuation Device
+
+* Not working yet
+** Not working yet
 
 *Notes:
 
@@ -30,6 +51,6 @@ README - Version 1.0
 
 *Known Bugs:
 
-Not far enough in development for bugs to be found.
+When you select to tribute summon a monster but there aren't any monsters on the field then it crashes the game.
 
 
