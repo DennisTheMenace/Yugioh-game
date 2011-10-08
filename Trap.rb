@@ -28,9 +28,8 @@ def activatetrap
   end 
   }
   
-  #puts $trapindicator
   puts "What trap do you want to activate?"
-  sleep 0.5
+  #sleep 0.5
   #response = gets.to_i
   #response -= 1
   response = 1
@@ -38,7 +37,7 @@ def activatetrap
   sleep 0.3
   #$trapindicator[response] = 2
   response -= 1
-  puts fieldtraps[response][:effect]
+  #puts fieldtraps[response][:effect]
   sleep 0.3
   eval(fieldtraps[response][:effect])
   a = @@spelltrapfield.size

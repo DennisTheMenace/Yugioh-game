@@ -8,6 +8,7 @@ def loadgame(file)
   puts 'Still in development'
 
   puts file
-
+  
+  
 
 end

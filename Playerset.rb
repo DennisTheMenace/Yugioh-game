@@ -32,7 +32,4 @@ def playerset(mode)
       @@espelltrapfield = $player1area[5]
 @@elp = $player1area[6]
     end
-    if mode == 1
-      @@monsterfield.push(card1)
-    end
 end

@@ -2,15 +2,20 @@
 
 # Summons a monster.
 
-def summon(mode)
+def summon(area)
   playerset($testing)
-  #puts "This feature is in development." # Exactly what it says.
+  
   handmonsters = []
-  @@hand.each { |x| 			# Adds all the monsters in your hand to the options to summon.
+  if area.empty? == true
+    puts "There are no monsters to summon.".red
+    return
+  end
+  area.each { |x| 			# Adds all the monsters in your hand to the options to summon.
   if x[:type] == "monster"
     handmonsters.push(x)
   end
   }
+  
   if handmonsters.empty? == true	# Outputs and error and returns if there are no monsters in your hand.
     puts "There are no monsters to summon.".red
     return
@@ -41,15 +46,17 @@ def summon(mode)
   else
   puts "You have summoned #{handmonsters[mon][:name]}"
   $file.puts("#{$activeplayer} summoned #{handmonsters[mon][:name]}")
-  @@graveyard.push(handmonsters[mon])
-  @@hand.delete(@@hand[mon])
-   
+  if area != @@graveyard
+    #@@graveyard.push(handmonsters[mon])
+    @@hand.delete(@@hand[mon])
+  end 
   @@monsterfield.push(handmonsters[mon])
   update
   puts "Monster Field:"
-  @@monsterfield.each {|x| puts x[:name]}
+  #@@monsterfield.each {|x| puts x[:name]}
+  list(@@monsterfield)
   end
-  if mode == 1
+  if $graphics == 1
     screenupdate
   end
 end
