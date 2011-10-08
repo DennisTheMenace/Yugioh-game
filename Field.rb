@@ -5,8 +5,10 @@
 $monsterfield1 = []
 $spelltrapfield1 = []
 $graveyard1 = []
+$outofplay1 = []
 
 $monsterfield2 = []
 $spelltrapfield2 = []
 $graveyard2 = []
+$outofplay2 = []
 
