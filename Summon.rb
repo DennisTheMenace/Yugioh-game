@@ -2,6 +2,12 @@
 
 # Summons a monster.
 
+# INSTRUCTIONS:
+
+# To summon a monster type - 'summon(area)'
+# Replace area with the area variable you want to summon from, e.g. @@hand, @@graveyard, @@deck
+
+
 def summon(area)
   playerset($testing)
   
@@ -23,8 +29,6 @@ def summon(area)
   puts "What monster do you want to summon? [1,2,3,4,5,6]"
   handmonsters.each {|x| puts x[:name]} # Lists all the monsters in your hand.
   response = gets.to_i
-  
-  #puts response.class
   response -= 1
   mon = response
   
@@ -32,7 +36,7 @@ def summon(area)
     puts "You must tribute a monster to summon this card. [1,2,3,4,5]"
     @@monsterfield.each {|a| puts a[:name]}
     response = gets.to_i
-    #puts response.class
+    
     response -= 1
     tribute = response
     puts "You tributed #{@@monsterfield[tribute][:name]}"
@@ -40,20 +44,21 @@ def summon(area)
     puts "You have summoned #{handmonsters[mon][:name]}"
     $file.puts("#{$activeplayer} summoned #{handmonsters[mon][:name]}")
     @@monsterfield.delete(@@monsterfield[tribute])
+    if area != @@graveyard
+      @@hand.delete(@@hand[mon])
+    end 
     @@monsterfield.push(handmonsters[mon])
-    update
+    #update						 	# Need to review this function at some point
   
   else
   puts "You have summoned #{handmonsters[mon][:name]}"
   $file.puts("#{$activeplayer} summoned #{handmonsters[mon][:name]}")
   if area != @@graveyard
-    #@@graveyard.push(handmonsters[mon])
     @@hand.delete(@@hand[mon])
   end 
   @@monsterfield.push(handmonsters[mon])
-  update
+  #update						 	# Refer to comment above
   puts "Monster Field:"
-  #@@monsterfield.each {|x| puts x[:name]}
   list(@@monsterfield)
   end
   if $graphics == 1

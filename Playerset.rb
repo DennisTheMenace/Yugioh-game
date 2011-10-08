@@ -30,6 +30,6 @@ def playerset(mode)
       @@ename = $player1area[3]
       @@emonsterfield = $player1area[4]
       @@espelltrapfield = $player1area[5]
-@@elp = $player1area[6]
+      @@elp = $player1area[6]
     end
 end
