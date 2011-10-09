@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+
+# In Resources.rb? - No
+
 require "rubygame"
 #require_relative 'Resources.rb'
 include Rubygame

@@ -1,4 +1,9 @@
 #!/usr/bin/env ruby
+
+# In Resources.rb? - No
+
+# Set and activate a trap card
+
 $trapindicator = [0,0,0,0,0]
 def settrap(mode)
   playerset($testing)

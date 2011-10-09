@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+
+# In Resources.rb? - Yes
+
 def playerset(mode)
   if $activeplayer == 0
       @@hand = $player1area[0]

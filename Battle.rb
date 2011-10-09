@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
+# In Resources.rb? - Yes
+
 def battle
-  playerset
+  playerset($testing)
   fieldmonsters = []
   efieldmonsters = []
   @@monsterfield.each { |x| 
@@ -10,7 +12,7 @@ def battle
   end
   }
   if fieldmonsters.empty? == true	
-    puts "There are no monsters to battle.".red
+    puts "There are no monsters to battle with".red
     return
   end
   @@emonsterfield.each { |x| 			
@@ -19,7 +21,7 @@ def battle
   end
   }
   if efieldmonsters.empty? == true	
-    puts "There are no monsters to battle.".red
+    puts "There are no enemy monsters to battle".red
     return
   end
   puts "What monster do you choose?"
@@ -31,12 +33,12 @@ def battle
   efieldmonsters.each {|x| puts x[:name]}
   response2 = gets.to_i
   response2 -= 1
-  
-  #answer = 200
-  #answer = 1000 - 800
-  
   answer = @@monsterfield[response1][:atk] - @@emonsterfield[response2][:atk]
   puts answer
+  if answer < 0
+    puts "Your monster lost the battle"
+    $file.puts("#{@@name} loss a battle against #{@@ename}")
+  end
   if answer == 0
     puts "Draw"
     @@graveyard.push(@@monsterfield[response1])

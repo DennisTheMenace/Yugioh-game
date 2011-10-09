@@ -1,14 +1,30 @@
 #!/usr/bin/env ruby
 
+# In Resources.rb? - Yes
+
 # Basically, the valid input commands list
 
-def command(player,ninja)
+# 1. smn = Summon a monster
+# 2. spl = Activate spell card
+# 3. trp = Set a trap
+# 4. lp = Show lifepoints
+# 5. hc = Show hand count
+# 6. mf = Show monster field
+# 7. gv = Show graveyard
+# 8. exit = Exit's the game
+# 9. help = Lists commands and can also give you a tutorial*
+# 10. btl = Battle an enemy monster with one of your own
+# 11. turn = Output the current players turn
+
+# * Tutorial coming soon...
+
+def command(player,user_response)
     playerset($testing)
-    if ninja == true
+    if user_response == true
       response = gets.chomp
     end
-    if response == "smn"	# Summon a monster
-      summon(@@hand)
+    if response == "smn" or response == "Summon"	# Summon a monster
+      summon(@@hand,false)
     elsif response == "spl"
       spell($testing)		
     elsif response == "mf"
@@ -23,6 +39,8 @@ def command(player,ninja)
       puts "You have #{@@hand.size} cards in your hand"
     elsif response == "hand"
       list(@@hand)
+    elsif response == "update"
+      require_relative 'Resources.rb'
     elsif response == "trp"			# Half implemented
       settrap($testing)
     elsif response == "settrap" 		# Alternate to trp
@@ -46,13 +64,13 @@ def command(player,ninja)
       
       end
     # Testing commands:
-    elsif response == "rpt" # Forgot what this was suppose to be =(
+    elsif response == "rpt" and $testing == 1 # Forgot what this was suppose to be =(
       puts "Not ready yet".yellow
-    elsif response == "parse"
+    elsif response == "parse" and $testing == 1 
       puts "parsing...".cyan
       sleep 0.5
       parse(gets.to_s)
-    elsif response == "eval" 
+    elsif response == "eval" and $testing == 1
       playerset($testing)
       puts "Input password..."
       response = gets.chomp
@@ -73,11 +91,12 @@ def command(player,ninja)
       eval(abc)
     
     elsif response == "test" and $testing == 1
-      puts "This testing function is in development"
-      draw($activeplayer, "yes", "Celtic Guardian")
+      puts "Used for testing anything at all"
+      test
     elsif response == "options" 
       puts "This function is in development"
     else
       puts "This does not compute".yellow
+
     end
 end

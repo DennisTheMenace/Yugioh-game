@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+# In Resources.rb? - No
 
 def resize(file)
   img = Magick::Image.read(file).first

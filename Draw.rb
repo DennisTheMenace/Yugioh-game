@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# In Resources.rb? - Yes
+
 # Method used for drawing a card.
 
 # INSTRUCTIONS:

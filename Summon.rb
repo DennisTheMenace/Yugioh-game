@@ -56,7 +56,7 @@ def summon(area,parameter)
   puts "You have summoned #{handmonsters[mon][:name]}"
   $file.puts("#{$activeplayer} summoned #{handmonsters[mon][:name]}")
   if area != @@graveyard
-    puts "Deleting from hand"
+    #puts "Deleting from hand"
     @@hand.delete(handmonsters[mon])
   end 
   @@monsterfield.push(handmonsters[mon])

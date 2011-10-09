@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# In Resources.rb? - Yes
+
 # Sets variables for the fields, graveyard and out of play(coming soon).
 
 $monsterfield1 = []

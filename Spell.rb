@@ -1,13 +1,22 @@
 #!/usr/bin/env ruby
 
+# In Resources.rb? - Yes
+
 # Activate a spell.
 
 # How will I do field spell cards?
 
 
 def spell(mode)			# mode is a testing feature which outputs the card effect data before executing it. It's only for testing purposes
-      playerset($testing)	# The mode parameter should be replaced by reading the $testing variable but I'll need to go through all my existing source code
-      handspells = [] 		# and change all the references to the spell function. =( Later I think
+      				# The mode parameter should be replaced by reading the $testing variable but I'll need to go through all my existing source code
+				# and change all the references to the spell function. =( Later I think
+
+      playerset($testing)
+      if @@spelltrapfield.size >= 5
+        puts "There is no room on your spell and trap field"
+        return 
+      end
+      handspells = [] 		
       @@hand.each {|x| 
       if x[:type] == "spell"
          handspells.push(x)			# Creates an array for all the spells in your hand.

@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# In Resources.rb? - Yes
+
 def close
   $file.close
   #sleep 1

@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# In Resources.rb? - Yes
+
 # Testing deck.
 
 # If you wish to add a card to the deck follow these steps:
@@ -47,4 +49,5 @@ Summoned Skull
 Dark Magician
 Hand Destruction
 Compulsory Evacuation Device
-Fortune Lady Water"
+Fortune Lady Water
+Sakuretsu Armor"

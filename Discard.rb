@@ -1,28 +1,13 @@
 #!/usr/bin/env ruby
 
+# In Resources.rb? - Yes
+
 # Discard a card from your hand.
 
-def discard(type) # Provide a string input of spell, monster or trap to determine the type of the card being discarded.
+def discard(type) # Provide a string input of spell, monster, trap or all to determine the type of the card being discarded.
   puts "Discard initiated"
-  sleep 1
   discards = []
-  #if player == "0"
-  #  puts "Player 1"
-  #  hand = $player1area[0]
-  #  deck = $player1area[1]
-  #  graveyard = $player1area[2]
-  #end
-  #if player == "1"
-  #   puts "Player 2"
-  #   hand = $player2area[0]
-  #   deck = $player2area[1]
-  #   graveyard = $player2area[2]
-  #end
-  puts "Player 1"
-  sleep 1
-  playerset
-  puts "Player variables set"
-  sleep 1
+  playerset($activeplayer)
   types = ["spell", "monster", "trap"]
   if type == "all"
     puts "Discard parameter = 'all'"
