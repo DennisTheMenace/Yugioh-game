@@ -1,14 +1,16 @@
 #!/usr/bin/env ruby
 
+# In Resources.rb? - Yes
+
 # Summons a monster.
 
 # INSTRUCTIONS:
 
-# To summon a monster type - 'summon(area)'
+# To summon a monster type - 'summon(area,parameter)'
 # Replace area with the area variable you want to summon from, e.g. @@hand, @@graveyard, @@deck
+# Replace parameter with false
 
-
-def summon(area)
+def summon(area,parameter)
   playerset($testing)
   
   handmonsters = []
@@ -45,7 +47,7 @@ def summon(area)
     $file.puts("#{$activeplayer} summoned #{handmonsters[mon][:name]}")
     @@monsterfield.delete(@@monsterfield[tribute])
     if area != @@graveyard
-      @@hand.delete(@@hand[mon])
+      @@hand.delete(handmonsters[mon])
     end 
     @@monsterfield.push(handmonsters[mon])
     #update						 	# Need to review this function at some point
@@ -54,7 +56,8 @@ def summon(area)
   puts "You have summoned #{handmonsters[mon][:name]}"
   $file.puts("#{$activeplayer} summoned #{handmonsters[mon][:name]}")
   if area != @@graveyard
-    @@hand.delete(@@hand[mon])
+    puts "Deleting from hand"
+    @@hand.delete(handmonsters[mon])
   end 
   @@monsterfield.push(handmonsters[mon])
   #update						 	# Refer to comment above
