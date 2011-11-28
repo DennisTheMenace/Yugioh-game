@@ -12,7 +12,7 @@ require_relative 'Field.rb'		# Sets the field variables
 require_relative 'Discard.rb'		# Discard a card function
 require_relative 'Summon.rb'		# Summon a monster function
 require_relative 'Phases.rb'		# Data for all of the phases
-require_relative 'Colourtest.rb'	# Provides the ability to used coloured text
+#require_relative 'Colourtest.rb'	# Provides the ability to used coloured text
 require_relative 'Commands.rb'		# All of the valid commands
 require_relative 'Playerset.rb'		# Defines the player variables so they can be used by functions
 require_relative 'Trap.rb'		# Set a trap function
@@ -24,4 +24,5 @@ require_relative 'Initialisation.rb'	# Initialises all the needed components for
 require_relative 'Routines.rb'		# Routines which must be run every action to allow for recognising of conditons for card effects
 require_relative 'Close.rb'		# Function for closing down the game safely
 require_relative 'Start.rb'		# Starts the game!
-
+require_relative 'Lifepoints.rb'	# Lifepoint control
+require_relative 'Update.rb'
