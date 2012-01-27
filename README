@@ -24,6 +24,8 @@ README - Version 1.2
 9. help = Lists commands and can also give you a tutorial*
 10. btl = Battle an enemy monster with one of your own		* Only in 2 player mode
 11. turn = Output the current players turn
+12. hand = List the contents of your hand
+
 
 * Tutorial coming soon...
 
