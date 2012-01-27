@@ -23,7 +23,6 @@ def command(player,user_response)
       list(@@graveyard)
     elsif response == "lp"
       playerset($testing)
-      
       #puts "You have #{$lp1}"
     elsif response == "hc"
       puts "You have #{@@hand.size} cards in your hand"
@@ -57,7 +56,8 @@ def command(player,user_response)
     elsif response == "rpt" and $testing == 1 # Report method yet to be implemented
       puts "Not ready yet".yellow
     elsif response == "parse" and $testing == 1 
-      puts "parsing...".cyan
+      #puts "parsing...".cyan
+      puts "parsing..."
       sleep 0.5
       parse(gets.to_s)
     elsif response == "eval" and $testing == 1
@@ -67,28 +67,31 @@ def command(player,user_response)
       
       sleep 1
       if response == "asd"
-        puts "Access Granted".green
+        #puts "Access Granted".green
+        puts "Access Granted"
       else
-        puts "Access Denied".red
+        #puts "Access Denied".red
+        puts "Access Denied"
         sleep 1
         return
       end
       puts "Type what you want evaluated"
       abc = gets
-      puts "Proccessing...".yellow
+      #puts "Proccessing...".yellow
+      puts "Proccessing..."
       sleep 1
-      puts "Proccessed!".green
+      #puts "Proccessed!".green
+      puts "Proccessed!"
       eval(abc)
     
     elsif response == "test" and $testing == 1
       puts "Used for testing anything at all"
-      test
+      test 
     elsif response == "options" 
       puts "This function is in development"
     elsif response == "decklist" # Outputs a list of names of all your cards in your deck
       puts $namelist
     else
-      puts "This does not compute".yellow
-
+      cputs("This does not compute",'yellow')
     end
 end
