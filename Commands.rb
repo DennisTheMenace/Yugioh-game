@@ -4,19 +4,7 @@
 
 # Basically, the valid input commands list
 
-# 1. smn = Summon a monster
-# 2. spl = Activate spell card
-# 3. trp = Set a trap
-# 4. lp = Show lifepoints
-# 5. hc = Show hand count
-# 6. mf = Show monster field
-# 7. gv = Show graveyard
-# 8. exit = Exit's the game
-# 9. help = Lists commands and can also give you a tutorial*
-# 10. btl = Battle an enemy monster with one of your own
-# 11. turn = Output the current players turn
 
-# * Tutorial coming soon...
 
 def command(player,user_response)
     playerset($testing)
@@ -34,7 +22,9 @@ def command(player,user_response)
       puts 'Graveyard:'
       list(@@graveyard)
     elsif response == "lp"
-      puts "You have #{$lp1}"
+      playerset($testing)
+      
+      #puts "You have #{$lp1}"
     elsif response == "hc"
       puts "You have #{@@hand.size} cards in your hand"
     elsif response == "hand"
@@ -64,7 +54,7 @@ def command(player,user_response)
       
       end
     # Testing commands:
-    elsif response == "rpt" and $testing == 1 # Forgot what this was suppose to be =(
+    elsif response == "rpt" and $testing == 1 # Report method yet to be implemented
       puts "Not ready yet".yellow
     elsif response == "parse" and $testing == 1 
       puts "parsing...".cyan
@@ -95,6 +85,8 @@ def command(player,user_response)
       test
     elsif response == "options" 
       puts "This function is in development"
+    elsif response == "decklist" # Outputs a list of names of all your cards in your deck
+      puts $namelist
     else
       puts "This does not compute".yellow
 
