@@ -1,4 +1,4 @@
-# In Resources.rb? - No
+# In Resources.rb? - Yes
 
 
 def update

@@ -17,7 +17,7 @@ def command(player,user_response)
       spell($testing)		
     elsif response == "mf"
       puts 'Monster field:'
-      list(@@monsterfield)
+      $monsterfield1.list
     elsif response == "gv"		# Lists all cards in your graveyard
       puts 'Graveyard:'
       list(@@graveyard)
@@ -28,8 +28,8 @@ def command(player,user_response)
       puts "You have #{@@hand.size} cards in your hand"
     elsif response == "hand"
       list(@@hand)
-    elsif response == "update"
-      require_relative 'Resources.rb'
+    elsif response == "update"			# Needs to be tested
+      require_relative 'Testing.rb'
     elsif response == "trp"			# Half implemented
       settrap($testing)
     elsif response == "settrap" 		# Alternate to trp

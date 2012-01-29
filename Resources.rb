@@ -27,4 +27,4 @@ require_relative 'Start.rb'		# Starts the game!
 require_relative 'Lifepoints.rb'	# Lifepoint control
 require_relative 'Update.rb'
 require_relative 'Trap.rb'		# Set and activate trap cards STATUS untested INFO: Early stages of implementation
-
+require_relative 'Testing.rb'

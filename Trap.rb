@@ -1,15 +1,15 @@
 #!/usr/bin/env ruby
 
-# In Resources.rb? - No
+# In Resources.rb? - Yes
 
 # Set and activate a trap card
 
 $trapindicator = [0,0,0,0,0]
-def settrap(mode)
+def settrap(mode)		# Currently includes spell cards in case I want to expand it to setting traps or spells down
   playerset($testing)
   handtraps = []
   @@hand.each {|x| 
-  if x[:type] == "trap"
+  if x[:type] == "trap" or "spell"
     handtraps.push(x)			# Creates an array for all the traps in your hand.
   end 
   }
@@ -18,10 +18,15 @@ def settrap(mode)
   list(handtraps)
   response = gets.to_i
   response -= 1
-  @@spelltrapfield.push(handtraps[response])
-  abc = @@spelltrapfield.size
-  abc -= 1
-  $trapindicator[abc] = 1
+  if $testing == 0
+    @@spelltrapfield.push(handtraps[response])
+    abc = @@spelltrapfield.size
+    abc -= 1
+    $trapindicator[abc] = 1
+  else
+    $spelltrapfield1.addcard(3,handtraps[response])
+  end
+  
 end
 
 def activatetrap

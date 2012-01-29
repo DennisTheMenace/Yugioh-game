@@ -2,13 +2,24 @@
 
 # In Resources.rb? - Yes
 
-$routines = ['$file.puts("#{@@name} is in phase #{phase},#{state}")']#,'puts $activephase']
-
-def routinecheck(phase ,state)
-  playerset($testing)
-  $routines.each { |routine|
-  eval(routine)
-  }
+class RoutineController
+  #def intialize
+  #  @@routines = []
+  #end
+  @@routines = []
+  def self.routinecheck(event)
+    @@routines.each {|routine|
+    if routine[0] == event
+      eval routine[1]
+    end
+    }
+  end
+  def self.addroutine(event,action)
+    @newroutine = [event,action]
+    @@routines.push(@newroutine)
+  end
 end
 
-
+def routinecheck(event)
+  RoutineController.routinecheck(event)
+end

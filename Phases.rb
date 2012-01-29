@@ -3,44 +3,34 @@
 # In Resources.rb? - Yes
 
 def activephase(currentplayer)
-  #if $activephase == 0		# Pre-game set up
-  #  5.times do draw(0,"yes") end
-  #  if $playermode == 1
-  #    5.times do draw(1,"yes") end
-  #  end
-    
-    #puts "Your hand consists of #{$hand1[0][:name]},#{$hand1[1][:name]},#{$hand1[2][:name]},#{$hand1[3][:name]},#{$hand1[4][:name]}"
-    #$activephase += 1
-  #end
-  #if $activeplayer
-  #playername = 
   if $activephase == 1
     
-    routinecheck('drawphase', 'start')
+    routinecheck('drawphase-start')
     #print $activeplayer
     #puts "#{$player1area)}'s turn"
     playerset($testing)
     #puts @@name
     puts "#{@@name}'s turn"
     puts "Draw Phase"
+    routinecheck('drawphase-draw')
     draw($activeplayer,"yes", false)
-    routinecheck('drawphase', 'draw')
     
-    routinecheck('drawphase','end')
+    
+    routinecheck('drawphase-end')
     
   end
   if $activephase == 2
     if $testing == 0
       puts "Standby phase"
     end
-    routinecheck('standbyphase', 'start')
+    routinecheck('standbyphase-start')
 
   end
   while $activephase == 3
     playerset($testing)
     puts "Main phase 1"
     
-    routinecheck('mainphase','start')  
+    routinecheck('mainphase-start')  
     command($activeplayer,true)
     
     puts "End phase? [Y,y]"
@@ -49,13 +39,13 @@ def activephase(currentplayer)
     when /[Y,y]/
       $activephase = 4
       
-      routinecheck('mainphase','end')
+      routinecheck('mainphase-end')
     end
     
   end
   if $activephase == 4
     puts "Main phase 2"
-    routinecheck('mainphase2', 'start')
+    routinecheck('mainphase2-start')
   end
   if $activephase == 5
      puts "Current player is #{$activeplayer}"
@@ -64,7 +54,7 @@ def activephase(currentplayer)
      sleep 1
      playerset($testing)
      puts "End phase"
-     routinecheck('endphase', 'start')
+     routinecheck('endphase-start')
      if @@hand.size > 6
        discard('all')
      end

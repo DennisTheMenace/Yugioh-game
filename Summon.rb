@@ -14,7 +14,7 @@ def summon(area,parameter)
   playerset($testing)
   
   handmonsters = []
-  if area.empty? == true
+  if area.empty? == true	# Exits method if you have no Monster Cards in your hand
     puts "There are no monsters to summon.".red
     return
   end
@@ -24,7 +24,7 @@ def summon(area,parameter)
   end
   }
   
-  if handmonsters.empty? == true	# Outputs and error and returns if there are no monsters in your hand.
+  if handmonsters.empty? == true	# Outputs an error and returns if there are no monsters in your hand.
     puts "There are no monsters to summon.".red
     return
   end
@@ -36,20 +36,20 @@ def summon(area,parameter)
   
   if handmonsters[mon][:level] > 4
     puts "You must tribute a monster to summon this card. [1,2,3,4,5]"
-    @@monsterfield.each {|a| puts a[:name]}
+    $monsterfield1.list
     response = gets.to_i
     
     response -= 1
     tribute = response
-    puts "You tributed #{@@monsterfield[tribute][:name]}"
-    $file.puts("#{$activeplayer} tributed #{@@monsterfield[tribute][:name]}")
+    #puts "You tributed #{@@monsterfield[tribute][:name]}"
+    #$file.puts("#{$activeplayer} tributed #{@@monsterfield[tribute][:name]}")
     puts "You have summoned #{handmonsters[mon][:name]}"
     $file.puts("#{$activeplayer} summoned #{handmonsters[mon][:name]}")
-    @@monsterfield.delete(@@monsterfield[tribute])
+    #@@monsterfield.delete(@@monsterfield[tribute])
     if area != @@graveyard
       @@hand.delete(handmonsters[mon])
     end 
-    @@monsterfield.push(handmonsters[mon])
+    $monsterfield1.addcard(0,handmonsters[mon])
     #update						 	# Need to review this function at some point
   
   else
@@ -59,10 +59,10 @@ def summon(area,parameter)
     #puts "Deleting from hand"
     @@hand.delete(handmonsters[mon])
   end 
-  @@monsterfield.push(handmonsters[mon])
+  $monsterfield1.addcard(0,handmonsters[mon])
   #update						 	# Refer to comment above
   puts "Monster Field:"
-  list(@@monsterfield)
+  $monsterfield1.list
   end
   if $graphics == 1
     screenupdate

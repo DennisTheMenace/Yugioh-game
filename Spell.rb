@@ -12,10 +12,12 @@ def spell(mode)			# mode is a testing feature which outputs the card effect data
 				# and change all the references to the spell function. =( Later I think
 
       playerset($testing)
-      if @@spelltrapfield.size >= 5
-        puts "There is no room on your spell and trap field"
-        return 
-      end
+      
+      
+      #if $spelltrapfield1.findemptyspace == false
+      #  puts "There is no room on your spell and trap field"
+      #  return 
+      #end
       handspells = [] 		
       @@hand.each {|x| 
       if x[:type] == "spell"
@@ -26,7 +28,11 @@ def spell(mode)			# mode is a testing feature which outputs the card effect data
       list(handspells)				# Lists all the spells in your hand
       response = gets.to_i
       if response == 0
-        puts "Invalid entry".cyan
+        if $colour == 1
+          puts "Invalid entry".cyan
+        else
+          puts "Invalid entry"
+        end
         return
       end
       response -= 1
@@ -37,21 +43,32 @@ def spell(mode)			# mode is a testing feature which outputs the card effect data
         return
       end
       print "You have "
-      print "activated ".green
+      if $colour == 1			# I need to implement a colour print method just like cputs
+          print "activated ".green		
+      else
+          print "activated "
+      end 
+      
       puts "#{handspells[spell][:name]} "
-      $file.puts("#{@@name} activated #{handspells[spell][:name]}")   # 
-      if mode == 1
+      #$file.puts("#{@@name} activated #{handspells[spell][:name]}")   # 
+      if $testing == 1
         puts handspells[spell][:effect]
-      end      
-      @@spelltrapfield.push(handspells[spell])			# Adds the spell to the spell field.
+      end
+      $spelltrapfield1.addcard(4,handspells[spell])	# Adds the spell to the spell field.
+      puts "Spell Field:"
+      $spelltrapfield1.list
       puts "Evaluating spell data..."				
       sleep 0.5							# Added sleeps to make it cooler
-      puts "Evaluated!".green
+      if $colour == 1
+        puts "Evaluated!".green
+      else
+        puts "Evaluated!"
+      end
+      
       eval(handspells[spell][:effect])
       #update						 	# Need to review this function at some point
-      a = @@spelltrapfield.size
-      a -= 1
-      @@spelltrapfield.delete(@@spelltrapfield[a])		# Deletes the spell from the spell field
-      @@graveyard.push(handspells[spell])
+
+      $spelltrapfield1.removecard(handspells[spell])		# Deletes the spell from the spell field
+      #@@graveyard.push(handspells[spell])			# Graveyard needs to be fixed after FieldController implementation
       #update 							# See 2nd comment above
 end
