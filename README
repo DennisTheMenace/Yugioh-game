@@ -1,31 +1,33 @@
 README - Version 1.2
 
 *Requirements:
-1. Ruby 1.9.2 (Windows installer can be download from my github page under downloads)
+1. Ruby 1.9.2 (Windows installer can be download from my github page under downloads or on linux can be compiled from source)
 2. Rubygame (Optional)
 3. RMagik (Optional)
 
 *How to run
 
 1. Extract the downloaded archive.
-2. Open up terminal and navigate to the extracted folder.
-3. run "ruby Game.rb"
+2. Open up terminal/cmd and navigate to the extracted folder.
+3. run "Game.rb"
 
 *Commands:
 
-1. smn = Summon a monster
-2. spl = Activate spell card
-3. trp = Set a trap
-4. lp = Show lifepoints
-5. hc = Show hand count
-6. mf = Show monster field
-7. gv = Show graveyard
-8. exit = Exit's the game
-9. help = Lists commands and can also give you a tutorial*
-10. btl = Battle an enemy monster with one of your own		* Only in 2 player mode
-11. turn = Output the current players turn
-12. hand = List the contents of your hand
-
+smn = Summon a monster
+spl = Activate spell card
+trp = Set a trap
+settrp = Set a trap (alternative to trp)
+atrp = Activate a trap
+lp = Show lifepoints
+hc = Show hand count
+mf = Show monster field
+gv = Show graveyard
+exit = Exit's the game
+help = Lists commands and can also give you a tutorial*
+btl = Battle an enemy monster with one of your own		* Only in 2 player mode
+turn = Output the current players turn
+hand = List the contents of your hand
+decklist = Outputs all the cards in your deck (From start of game)
 
 * Tutorial coming soon...
 
