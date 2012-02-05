@@ -5,7 +5,6 @@
 # Basically, the valid input commands list
 
 
-
 def command(player,user_response)
     playerset($testing)
     if user_response == true
@@ -21,22 +20,22 @@ def command(player,user_response)
     elsif response == "gv"		# Lists all cards in your graveyard
       puts 'Graveyard:'
       list(@@graveyard)
-    elsif response == "lp"
+    elsif response == "lp"		# Display your current lifepoints
       playerset($testing)
-      #puts "You have #{$lp1}"
+      puts "You have #{$lp1.lifepoints}"
     elsif response == "hc"
       puts "You have #{@@hand.size} cards in your hand"
     elsif response == "hand"
       list(@@hand)
-    elsif response == "update"			# Needs to be tested
-      require_relative 'Testing.rb'
-    elsif response == "trp"			# Half implemented
+    #elsif response == "update"			# Needs to be implemented still. Will allow in-game updating of database or files
+    #  require_relative 'Testing.rb'
+    elsif response == "trp"			# Set trap card. INFO: Half implemented
       settrap($testing)
-    elsif response == "settrap" 		# Alternate to trp
+    elsif response == "settrap" 		# Alternate to trp.
       settrap($testing)
-    elsif response == "atrp"			# Half implemented
+    elsif response == "atrp"			# Activate trap card. INFO: Half implemented
       activatetrap
-    elsif response == "btl"
+    elsif response == "btl" and $testing == 1	# Monster battle method
       battle
     elsif response == "exit"		# Allows exiting and closes all open files.
       close
@@ -44,7 +43,7 @@ def command(player,user_response)
       puts $activeplayer
     elsif response == "help"	# The word 'Help' says it all
       help
-    elsif response == "settings"  # Doesn't work, crashes game
+    elsif response == "settings" and $testing == 1  # Doesn't work, crashes game
       begin
       $graphics = 0
       $screen.close

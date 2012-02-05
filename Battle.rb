@@ -2,6 +2,9 @@
 
 # In Resources.rb? - Yes
 
+# Will probably completely rewrite this when I want to get 2 player working again
+# For now it can sit here even though it's useless
+
 def battle
   playerset($testing)
   fieldmonsters = []
@@ -50,5 +53,6 @@ def battle
   if answer > 0
     puts "Your monster won the battle"
     $file.puts("#{@@name} won a battle against #{@@ename}")
+    decreaselp('enemy', answer)
   end
 end
