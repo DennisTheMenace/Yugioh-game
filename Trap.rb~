@@ -32,8 +32,8 @@ def settrap(mode)
 end
 
 def activatetrap		# Being fully rewritten for v1.3
-  fieldtraps = $spelltrapfield1.search(1,3,false)
-  list(fieldtraps)
+ fieldtraps = $spelltrapfield1.search(1,3,false)
+
 
 
 

@@ -1,8 +1,6 @@
-#!/usr/bin/env ruby
+# Allows colouring of words.
 
 # In Resources.rb? - Yes
-
-# Allows colouring of words.
 
 if $colour == 1
   require 'term/ansicolor'

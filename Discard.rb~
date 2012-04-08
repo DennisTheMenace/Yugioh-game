@@ -29,7 +29,7 @@ def discard(type) # Provide a string input of spell, monster, trap or all to det
   
   discardnum = gets.to_i
   if discardnum == 0
-    cputs "Invalid entry".cyan
+    puts "Invalid entry".cyan
     return
   end
   discardnum -= 1

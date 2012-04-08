@@ -7,8 +7,8 @@
 
 def command(player,user_response)
     playerset($testing)
-    if $testingmove != true
-      response = $testingmove
+    if user_response == true
+      response = gets.chomp
     end
     if response == "smn" or response == "Summon"	# Summon a monster
       summon(@@hand,false)

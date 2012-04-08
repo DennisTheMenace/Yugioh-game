@@ -15,6 +15,7 @@
 
 $hand1 = [] # Sets hand to empty before game.
 $hand2 = []
+#$deck.delete($deck[1])
 def draw(player,output,card)
   
   

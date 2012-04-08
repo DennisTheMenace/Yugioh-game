@@ -4,7 +4,7 @@
 
 # Class which stores field data.
 
-# States: 0 = face-up attack, 1 = face-up defense , 2 = face-down defense , 3 = face-down spell/trap , 4 = face-up spell/trap 
+# States: 0 = face-up attack, 1 = , 2 = , 3 = face-down spell/trap , 4 = 
 
 class FieldController
   attr_accessor :space1, :space2, :space3, :space4, :space5, :allspaces

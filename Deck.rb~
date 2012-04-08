@@ -45,7 +45,7 @@ card11 = {:id => 11, :name => "Hand Destruction", :type => "spell", :desc => "Bo
 #  card12 = {:id => 12, :name => "Compulsory Evacuation Device", :type => "spell", :desc => "Return 1 monster on the field to it's owner's hand.", :effect => 'selectchoice = select(@@monsterfield) move(@@monsterfield,@@monsterfield[selectchoice],@@hand)'}
 #Compulsory Evacuation Device STATUS: untested INFO: Changed to spell type for testing purposes
 
-#end
+end
 card13 = {:id => 13, :name => "Fortune Lady Water", :type => "monster",:desc => "This card's ATK and DEF are equal to its Level x 300 . During each of your Standby Phases , increase the Level of this card by 1 (max 12) . When this card is Special Summoned while you control a face-up Fortune Lady' monster except 'Fortune Lady Water', draw 2 cards .", :atk => 0, :def => 0, :level => 4, :file => "Images/FortuneLadyWater.jpg", :effect => "
 RoutineController.addroutine('standbyphase-start',
 '

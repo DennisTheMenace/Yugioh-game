@@ -8,6 +8,7 @@ class Lifepoints
   attr_accessor :lifepoints
   def initialize
     @lifepoints = 8000
+    
   end
   def increaselp(amount)
     @lifepoints += amount

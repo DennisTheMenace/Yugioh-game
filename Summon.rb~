@@ -61,7 +61,7 @@ def summon(area,parameter)
   end 
   $monsterfield1.addcard(0,handmonsters[mon])
         
-  eval(handmonsters[mon][:effect])
+  #eval(handmonsters[mon][:effect])
   
   #update						 	# Refer to comment above
   puts "Monster Field:"
