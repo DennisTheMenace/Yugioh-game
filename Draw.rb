@@ -38,7 +38,7 @@ def draw(player,output,card)
     end
   else
   draw = $player1deck.randomcard
-  $file.puts("#{player[3]} drew #{@@deck[draw][:name]}")
+      #$file.puts("#{player[3]} drew #{@@deck[draw][:name]}")
   if output == "yes"	# If you passed 'yes' to output then it outputs what card you drew
     puts "you drew the card #{@@deck[draw][:name]}"
   end
