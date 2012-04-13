@@ -22,11 +22,11 @@ def setup
     if $testing == 1	# Uses some premade names if your in testing mode
       $usr1 = 'Joshua'
       $usr2 = 'Max'
-      $player1hand = AreaController.new
-      $player2hand = AreaController.new
-      $player1deck = AreaController.new
-      $player2deck = AreaController.new
-        $deck1.each{|card| $player1deck.addcard(card)}
+        #$player1hand = AreaController.new
+        #$player2hand = AreaController.new
+        #$player1deck = AreaController.new
+        #$player2deck = AreaController.new
+        #$deck1.each{|card| $player1deck.addcard(card)}
         
     else			# For a proper game it prompts you for both players names
     puts "Player 1 name: "

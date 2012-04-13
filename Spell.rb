@@ -18,6 +18,7 @@ def spell(mode)		# mode is a testing feature which outputs the card effect data 
     #  puts "There is no room on your spell and trap field"
     #  return 
     #end
+    
     handspells = [] 		
     @@hand.each {|x| 
     if x[:type] == "spell"
@@ -49,7 +50,7 @@ def spell(mode)		# mode is a testing feature which outputs the card effect data 
     else
         print "activated "
     end 
-      
+    
     puts "#{handspells[spell][:name]} "
     #$file.puts("#{@@name} activated #{handspells[spell][:name]}")   # 
     if $testing == 1
@@ -65,10 +66,11 @@ def spell(mode)		# mode is a testing feature which outputs the card effect data 
     else
         puts "Evaluated!"
     end
-      
+    
     eval(handspells[spell][:effect])
     #update						 	# Need to review this function at some point
-
+    
+    
     $spelltrapfield1.removecard(handspells[spell])		# Deletes the spell from the spell field
     #@@graveyard.push(handspells[spell])			# Graveyard needs to be fixed after FieldController implementation
     #update 							# See 2nd comment above

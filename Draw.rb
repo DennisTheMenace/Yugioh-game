@@ -16,7 +16,6 @@
 $hand1 = [] # Sets hand to empty before game.
 $hand2 = []
 def draw(player,output,card)
-    
     playerset('unknown')
   if card != false
     
@@ -36,18 +35,15 @@ def draw(player,output,card)
       end
       }
     end
-  else
-  draw = $player1deck.randomcard
-      #$file.puts("#{player[3]} drew #{@@deck[draw][:name]}")
-  if output == "yes"	# If you passed 'yes' to output then it outputs what card you drew
-    puts "you drew the card #{@@deck[draw][:name]}"
-  end
-  if $testing == 1
-    $player1hand.addcard(@@deck[draw])
-     @@deck.delete(@@deck[draw])
-  else
+          draw = rand(@@deck.size)
+          $file.puts("#{player[3]} drew #{@@deck[draw][:name]}")
+          if output == "yes"	# If you passed 'yes' to output then it outputs what card you drew
+              puts "you drew the card #{@@deck[draw][:name]}"
+          end
     @@hand.push(@@deck[draw])
     @@deck.delete(@@deck[draw])
-  end
-      end
+          end
+
+
+        
 end

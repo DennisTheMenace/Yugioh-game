@@ -19,6 +19,22 @@ class AreaController
             end
         }
     end
+    def selectcard(type)
+        puts @allcards.size
+        
+        @allcards.each{|card| 
+            puts card[:type]
+            if card[:type] == type
+                puts "1"
+                puts card[:name]
+            else
+                puts "0"
+            end} 
+        puts "done"
+        response = gets.to_i
+        response -= 1
+        return @allcards[response]
+    end
     def randomcard
        draw = rand(@allcards.size) 
     end

@@ -25,7 +25,7 @@ def summon(area,parameter)
   }
   
   if handmonsters.empty? == true	# Outputs an error and returns if there are no monsters in your hand.
-    puts "There are no monsters to summon.".red
+    cputs ("There are no monsters to summon.",'red')
     return
   end
   puts "What monster do you want to summon? [1,2,3,4,5,6]"
