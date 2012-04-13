@@ -31,10 +31,10 @@ def parse(string)
     a = b + 1
     if is_number?(array[a]) == true
       
-      sleep 0.3
+      
       puts "true"
       array[a] = array[a].to_i
-      sleep 0.3
+      
       array[a].times do draw($activeplayer,'yes', false) end
     end
   end

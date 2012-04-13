@@ -3,5 +3,5 @@
 # In Resources.rb? - If $testing == 1
 
 def test
-  
+
 end

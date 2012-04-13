@@ -11,7 +11,7 @@
 # It then runs Game.rb and after the while loop is the end code.
 
 
-require_relative 'Resources.rb' # Imports "Resources.rb" which in turn imports all the other required files.
+require 'Resources.rb' # Imports "Resources.rb" which in turn imports all the other required files.
 
 
 # Open the log

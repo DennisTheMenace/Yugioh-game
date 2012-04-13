@@ -6,7 +6,7 @@
 
 def setup
   $testing = 1		# Sets it to testing mode if 1 or not testing mode if 0
-  $testingmove = 'trp'
+    $testingmove = 'test'
   $graphics = 0		# Sets if graphics are enabled if 1 or disabled if 0
   $playermode = 0	# Sets the game to 1 player if 0 or 2 player if 1 
 			# 2 player mode is so buggy... In other words, don't play the game in 2 player mode
@@ -19,10 +19,16 @@ def setup
 
   $version = 1.3	# Game version
 
-  if $testing == 1	# Uses some premade names if your in testing mode
-    $usr1 = 'Joshua'
-    $usr2 = 'Max'
-  else			# For a proper game it prompts you for both players names
+    if $testing == 1	# Uses some premade names if your in testing mode
+      $usr1 = 'Joshua'
+      $usr2 = 'Max'
+      $player1hand = AreaController.new
+      $player2hand = AreaController.new
+      $player1deck = AreaController.new
+      $player2deck = AreaController.new
+        $deck1.each{|card| $player1deck.addcard(card)}
+        
+    else			# For a proper game it prompts you for both players names
     puts "Player 1 name: "
     $usr1 = gets.chomp
     puts "Player 2 name: "

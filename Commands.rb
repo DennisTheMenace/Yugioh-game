@@ -7,9 +7,10 @@
 
 def command(player,user_response)
     playerset($testing)
-    if $testingmove != true
-      response = $testingmove
-    end
+    #if $testingmove != true
+    #  response = $testingmove
+    #end
+    response = gets.chomp
     if response == "smn" or response == "Summon"	# Summon a monster
       summon(@@hand,false)
     elsif response == "spl"
@@ -57,21 +58,16 @@ def command(player,user_response)
     elsif response == "parse" and $testing == 1 
       #puts "parsing...".cyan
       puts "parsing..."
-      sleep 0.5
       parse(gets.to_s)
     elsif response == "eval" and $testing == 1
       playerset($testing)
       puts "Input password..."
       response = gets.chomp
-      
-      sleep 1
       if response == "asd"
         #puts "Access Granted".green
-        puts "Access Granted"
+        cputs "Access Granted", 'green'
       else
-        #puts "Access Denied".red
-        puts "Access Denied"
-        sleep 1
+        cputs "Access Denied", 'red'
         return
       end
       puts "Type what you want evaluated"

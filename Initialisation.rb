@@ -14,7 +14,7 @@ def initialise(loadfile)
   
   if $testing == 1
 
-    require_relative 'Parser.rb'
+    require 'Parser.rb'
 
 
   end
@@ -22,7 +22,7 @@ def initialise(loadfile)
   # Initialise graphics if graphics mode is on
   if $graphics == 1
     require 'RMagick'
-    require_relative 'TestGraphicsHandler.rb'
+    require 'TestGraphicsHandler.rb'
   end
   # Load game
   if $loadgame == true

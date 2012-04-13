@@ -16,25 +16,19 @@
 $hand1 = [] # Sets hand to empty before game.
 $hand2 = []
 def draw(player,output,card)
-  
-  
-  if player == 0
-    player = $player1area
-  end
-  if player == 1
-    player = $player2area
-  end
+    
+    playerset('unknown')
   if card != false
     
     if $testing == 1
       # Ability to choose what card you want. Testing purposes only
-      player[1].each { |x| #puts x
+      @@deck.each { |x| #puts x
 #puts x[:name]
       if x[:name] == card
         puts "Working so far!"
        
-        player[0].push(x)
-        player[1].delete(x)
+        @@hand.push(x)
+        @@deck.delete(x)
         if output == "yes"	# If you passed 'yes' to output then it outputs what card you drew
           puts "you drew the card #{x[:name]}"
         end
@@ -43,12 +37,17 @@ def draw(player,output,card)
       }
     end
   else
-  draw = rand(player[1].size)
-  $file.puts("#{player[3]} drew #{player[1][draw][:name]}")
+  draw = $player1deck.randomcard
+  $file.puts("#{player[3]} drew #{@@deck[draw][:name]}")
   if output == "yes"	# If you passed 'yes' to output then it outputs what card you drew
-    puts "you drew the card #{player[1][draw][:name]}"
+    puts "you drew the card #{@@deck[draw][:name]}"
   end
-  player[0].push(player[1][draw])
-  player[1].delete(player[1][draw])
+  if $testing == 1
+    $player1hand.addcard(@@deck[draw])
+     @@deck.delete(@@deck[draw])
+  else
+    @@hand.push(@@deck[draw])
+    @@deck.delete(@@deck[draw])
   end
+      end
 end
